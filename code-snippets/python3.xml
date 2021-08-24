@@ -2,262 +2,153 @@
 <snippets language="python3">
   <snippet>
     <tag>abs</tag>
-    <text><![CDATA[abs(${1:x})$<
-val = "Returns Absolute Value"
-try: val = abs(float($1))
-except ValueError: pass
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[abs(${1:x})
+$0]]></text>
     <description>Absolute</description>
   </snippet>
   <snippet>
     <tag>all</tag>
-    <text><![CDATA[all(${1:iterable})$<
-val = "Returns True if all elements are True"
-try: val = all($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[all(${1:iterable})
+$0]]></text>
     <description>All</description>
   </snippet>
   <snippet>
     <tag>any</tag>
-    <text><![CDATA[any(${1:iterable})$<
-val = "Returns True if any of the elements are True"
-try: val = any($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[any(${1:iterable})
+$0]]></text>
     <description>Any</description>
   </snippet>
   <snippet>
     <tag>ascii</tag>
-    <text><![CDATA[ascii(${1:object})$<
-val = "Returns string with non-ascii characters as escaped characters"
-try: val = ascii($1)
-except Exception: val = ascii(str($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[ascii(${1:obj})
+$0]]></text>
     <description>ASCII</description>
   </snippet>
   <snippet>
     <tag>assert</tag>
-    <text><![CDATA[assert ${1:expression}${2:, expression};]]></text>
-    <description>Assert Statement</description>
-  </snippet>
-  <snippet>
-    <tag>async_for</tag>
-    <text><![CDATA[async ${1:for}$0]]></text>
-    <description>Asyncrounous For Statement</description>
-  </snippet>
-  <snippet>
-    <tag>async_funcdef</tag>
-    <text><![CDATA[${1:decorators}async def ${2:funcname}(${3:parameter_list})${4: -> }${5:expression}:
-	${6:suite}]]></text>
-    <description>Asyncrounous Function Definition</description>
-  </snippet>
-  <snippet>
-    <tag>async_with</tag>
-    <text><![CDATA[async ${1:with}$0]]></text>
-    <description>Asyncrounous with Statement</description>
+    <text><![CDATA[assert ${1:expression}
+$0]]></text>
+    <description>Assert</description>
   </snippet>
   <snippet>
     <tag>author</tag>
     <text><![CDATA[__author__ = "${1:author(s)}"
 __copyright__ = "${2:copyright}"
-__credits__ = [$<
-authors = ($1.replace(" and ", ' ')).replace(" and ", " , ")
-return '"' + '", "'.join(list(filter(None, authors.split(', ')))) + '"'
->${3:, further_credits}]
+__credits__ = [${3:credits}]
 __license__ = "${4:PSFL|MIT|Apache|LGPL|GPL}"
 __version__ = "${5:MAJOR}.${6:Minor}.${7:patch}"
 __maintainer__ = "$<return $1.split(',')[0]>"
 __email__ = "${8:username}@${9:domain_name}"
-__status__ = "${10:Prototype|Development|Production}"]]></text>
+__status__ = "${10:Prototype|Development|Production}"
+$0]]></text>
     <description>Authorship, Versioning and Licenseing</description>
   </snippet>
   <snippet>
     <tag>bin</tag>
-    <text><![CDATA[bin(${1:x})$<
-val = "Returns string with non-ascii characters as escaped characters"
-try: val = bin(int($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[bin(${1:number})
+$0]]></text>
     <description>Binary</description>
   </snippet>
   <snippet>
-    <tag>binary</tag>
-    <text><![CDATA[${1:sequence}$<
-val = " # Nothing suitable from sequence"
-try: val = '0b'+''.join(format(ord(x), 'b') for x in $1)
-except Exception: pass
-return val
->$0]]></text>
-    <description>Binary-Sequence</description>
-  </snippet>
-  <snippet>
     <tag>bool</tag>
-    <text><![CDATA[bool(${1:[x]})$<
-val = "returns a True or False from Expression"
-try: val = bool($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[bool(${1:x})
+$0]]></text>
     <description>Boolean</description>
   </snippet>
   <snippet>
     <tag>breakpoint</tag>
-    <text><![CDATA[breakpoint(${1:*args}${2:, **kwargs})$<
-val = "Drops you into the debugger as the call site"
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[breakpoint(${1:*args}${2:, **kwargs})
+$0]]></text>
     <description>Breakpoint</description>
   </snippet>
   <snippet>
     <tag>break</tag>
-    <text><![CDATA[break$0]]></text>
+    <text><![CDATA[break
+$0]]></text>
     <description>Break Statement</description>
   </snippet>
   <snippet>
     <tag>bytearray</tag>
-    <text><![CDATA[bytearray(${1:source}${2:, "utf-8"}${3:, errors})$<
-val = "Returns a mutable sequence of integers in the range of 0 <= x < 256"
-try: val = bytearray($1, $2.lstrip(', '), $3.lstrip(', '))
-except Exception: val = bytearray($1, $2.lstrip(', '))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[bytearray(${1:string}${2:, encoding}${3:, errors})
+$0]]></text>
     <description>Byte Array</description>
   </snippet>
   <snippet>
     <tag>bytes</tag>
-    <text><![CDATA[bytes(${1:source}${2:, encodings}${3:, errors})$<
-val = "Returns a immutable sequence of integers in the range of 0 <= x < 256"
-try: val = bytes($1, $2.lstrip(', '), $3.lstrip(', '))
-except Exception: val = bytes($1, $2.lstrip(', '))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[bytes(${1:iterable_of_ints})
+$0]]></text>
     <description>Bytes</description>
   </snippet>
   <snippet>
     <tag>callable</tag>
-    <text><![CDATA[callable(${1:object})$<
-val = "Returns True if $1 appears callable, False if not"
-try: val = callable($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[callable(${1:object})
+$0]]></text>
     <description>Callable</description>
   </snippet>
   <snippet>
     <tag>chr</tag>
-    <text><![CDATA[chr(${1:x})$<
-val = "Return unicode character at intger $1"
-try: val = chr($1)
-except Exception: val = chr(int($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[chr(${1:i})
+$0]]></text>
     <description>Character</description>
   </snippet>
   <snippet>
     <tag>clamp</tag>
-    <text><![CDATA[max(${1:high}, min(${2:x}, ${3:low}))$<
-val = "Returns value only between max and min"
-try: val = max($1, min($2, $3))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[max(min(${1:low}, ${2:x}), ${3:high})
+$0]]></text>
     <description>Clamp</description>
   </snippet>
   <snippet>
-    <tag>classdef</tag>
-    <text><![CDATA[${1:decorators}class ${2:classname}${3:inheritance}:
-	${4:suite}
+    <tag>class</tag>
+    <text><![CDATA[class ${1:identifier}(${2:arguments}):
+    ${3:suite}
 $0]]></text>
     <description>Class Definition</description>
   </snippet>
   <snippet>
-    <tag>classname</tag>
-    <text><![CDATA[${1:identifier}$0]]></text>
-    <description>Class Name</description>
-  </snippet>
-  <snippet>
     <tag>compile</tag>
-    <text><![CDATA[compile(${1:source}, ${2:filename}, ${3:mode}${4:, flags = 0}${5:, dont_inherit = False}${6:, optimize = -1})${7: # Large complex strings will crash python!}$0]]></text>
+    <text><![CDATA[compile(${1:source}, ${2:filename}, ${3:mode}${4:, flags = 0}${5:, dont_inherit = False}${6:, optimize = -1})
+$0]]></text>
     <description>Compile</description>
   </snippet>
   <snippet>
     <tag>complex</tag>
-    <text><![CDATA[complex(${1:real}, ${2:imaginary})$<
-val = "Returns value in the form real + imag*1j"
-try: val = complex(int($1), int($2))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[complex(${1:real}, ${2:imag})
+$0]]></text>
     <description>Complex</description>
   </snippet>
   <snippet>
-    <tag>ifelifelse</tag>
-    <text><![CDATA[if ${1:condition}:
-	${2:expression}
-elif ${3:condition}:
-	${4:expression}
-else:
-	$${5:expression}
-$0]]></text>
-    <description>Conditional Statement</description>
-  </snippet>
-  <snippet>
     <tag>continue</tag>
-    <text><![CDATA[continue$0]]></text>
+    <text><![CDATA[continue
+$0]]></text>
     <description>Continue Statement</description>
   </snippet>
   <snippet>
-    <tag>decorator</tag>
-    <text><![CDATA[@${1:assignment_expression}
-$1]]></text>
-    <description>Decorator</description>
+    <tag>await</tag>
+    <text><![CDATA[await ${1:primary}
+$0]]></text>
+    <description>Coroutine Awaitable</description>
   </snippet>
   <snippet>
-    <tag>decorators</tag>
-    <text><![CDATA[${1:decorator}]]></text>
-    <description>Decorators</description>
-  </snippet>
-  <snippet>
-    <tag>defparameter</tag>
-    <text><![CDATA[${1:parameter}${2: = }${3:expression}$0]]></text>
-    <description>Define Parameter</description>
+    <tag>async</tag>
+    <text><![CDATA[async ${1:function_body}$0]]></text>
+    <description>Couroutine Definition</description>
   </snippet>
   <snippet>
     <tag>delattr</tag>
-    <text><![CDATA[delattr(${1:object}, ${2:named_attribute})$<
-val = "Deletes $2, provided the $1 allows it"
-try: val = "del $1.$2"
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[delattr(${1:obj}, ${1:name})
+$0]]></text>
     <description>Delete Attribute</description>
   </snippet>
   <snippet>
     <tag>del</tag>
-    <text><![CDATA[del ${1:target_list}$0]]></text>
-    <description>Delete Statment</description>
+    <text><![CDATA[del ${1:target}
+$0]]></text>
+    <description>Delete Statement</description>
   </snippet>
   <snippet>
     <tag>dict</tag>
-    <text><![CDATA[dict(${1:iterable}, ${2:**kwargs})$<
-val = "Creates a new dictionary"
-try: val = dict($1, $2)
-except Exception: val = dict($1)
-except Exception: val = dict($2)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[dict(${1:mapping})
+$0]]></text>
     <description>Dictionary</description>
   </snippet>
   <snippet>
@@ -268,254 +159,210 @@ $0]]></text>
   </snippet>
   <snippet>
     <tag>dir</tag>
-    <text><![CDATA[dir(${1:object})${2: # Returns current local scope}$0]]></text>
+    <text><![CDATA[dir(${1:object})
+$0]]></text>
     <description>Directory</description>
   </snippet>
   <snippet>
     <tag>divmod</tag>
-    <text><![CDATA[divmod(${1:numerator}, ${2:denominator})$<
-val = "Returns quotient and remainder in Integer division"
-try: val = divmod($1, $2)
-except Exception: val = divmod(int($1), int($2))
-except Exception: val = divmod(int($1), $2)
-except Exception: val = divmod($1, int($2))
-except Exception: pass
-return " # " + val
->$0]]></text>
+    <text><![CDATA[divmod(${1:x}, ${2:y})
+$0]]></text>
     <description>Division and Modulo</description>
   </snippet>
   <snippet>
-    <text><![CDATA["""
-	${1:Documentation String}
-"""
+    <text><![CDATA[""" ${1:Documentation String} """
 $0]]></text>
     <description>doc string</description>
     <tag>doc</tag>
   </snippet>
   <snippet>
+    <tag>elif</tag>
+    <text><![CDATA[elif ${1:assignment_expression}:
+    ${2:suite}
+$0]]></text>
+    <description>Else If Statement</description>
+  </snippet>
+  <snippet>
     <tag>enumerate</tag>
-    <text><![CDATA[enumerate(${1:iterable}, ${2:start=0})$<
-val = "Return a (index, item) tuple iterable sequence"
-try: val = list(enumerate($1, $2))
-except Exception: val = list(enumerate($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[enumerate(${1:iterable}${2:, start=0})
+$0]]></text>
     <description>Enumerate</description>
   </snippet>
   <snippet>
     <tag>eval</tag>
-    <text><![CDATA[eval(${1:expression}${2:, globals}${3:, locals})$<
-val = "The expression is represented as string with globals & locals as dictionaries which returns evaluated expression"
-try: val = eval($1, $2.lstrip(', '), $3.lstrip(', '))
-except Exception: val = eval($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[eval(${1:expression}${2:, globals=None}${3:, locals=None})
+$0]]></text>
     <description>Evaluate</description>
   </snippet>
   <snippet>
+    <tag>exceptas</tag>
+    <text><![CDATA[except ${1:expression} as ${2:identifier}:
+    ${3:suite}
+$0]]></text>
+    <description>Except As Statement</description>
+  </snippet>
+  <snippet>
     <tag>except</tag>
-    <text><![CDATA[except ${1:expression}${2: as }${3:identifier}:
-	${4:suite}
+    <text><![CDATA[except ${1:expression}:
+    ${2:suite}
 $0]]></text>
     <description>Except Statement</description>
   </snippet>
   <snippet>
     <tag>exec</tag>
-    <text><![CDATA[exec(${1:object}${2:, globals}${3:, locals})$<
-val = "The expression is represented as string with globals & locals as dictionaries which returns execuated expression"
-try: val = exec($1, $2.lstrip(', '), $3.lstrip(', '))
-except Exception: val = exec($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[exec(${1:object}${2:, globals=None}${3:, locals=None})
+$0]]></text>
     <description>Execute</description>
   </snippet>
   <snippet>
     <tag>filter</tag>
-    <text><![CDATA[filter(${1:function}, ${2:iterable})$<
-val = "Construct iterator from iterable and function, returns filter object"
-try: val = list(filter($1, $2))
-except Exception: val = list(filter(None, $2))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[filter(${1:function or None}, ${2:iterable})
+$0]]></text>
     <description>Filter</description>
   </snippet>
   <snippet>
     <tag>float</tag>
-    <text><![CDATA[float(${1:[x]})$<
-val = "Returns floating point number from a number or string"
-try: val = float($1)
-except Exception: val = float([$1])
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[float(${1:x=0})
+$0]]></text>
     <description>Float</description>
   </snippet>
   <snippet>
+    <tag>forelse</tag>
+    <text><![CDATA[for ${1:target} in ${2:expression}:
+    ${3:suite}
+else:
+    ${4:suite}
+$0]]></text>
+    <description>For Else Statement</description>
+  </snippet>
+  <snippet>
     <tag>format</tag>
-    <text><![CDATA[format(${1:value}${2:, format_spec}])$<
-val = "Convert a value to a formatted repersentation"
-try: val = f"{$1:$2.lstrip(', ')}"
-except Exception: format($1, $2.lstrip(', '))
-except Exception: val = f"{$1}"
-except Exception: val = format($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[format(${1:value}${2:, format_spec=''})
+$0]]></text>
     <description>Format</description>
   </snippet>
   <snippet>
+    <tag>formutate</tag>
+    <text><![CDATA[for ${1:target} in ${2:expression}[:]:
+    ${3:suite}
+$0]]></text>
+    <description>For Mutate Statement</description>
+  </snippet>
+  <snippet>
+    <tag>forrange</tag>
+    <text><![CDATA[for ${1:i} in range(${2:start}, ${3:stop}${4:, step}):
+    ${5:suite}
+$0]]></text>
+    <description>For Range Statement</description>
+  </snippet>
+  <snippet>
     <tag>for</tag>
-    <text><![CDATA[for ${1:target_list} in ${2:expression_list}:
-	${3:suite}
-${4:else}:
-	${5:suite}]]></text>
+    <text><![CDATA[for ${1:target} in ${2:expression}:
+    ${3:suite}
+$0]]></text>
     <description>For Statement</description>
   </snippet>
   <snippet>
-    <tag>from</tag>
-    <text><![CDATA[${1:from}${3:module_or_relative_module}${4:import}${6:identifier}${7:as}${8:identifier}
-$0]]></text>
-    <description>From-Import Statement</description>
-  </snippet>
-  <snippet>
     <tag>frozenset</tag>
-    <text><![CDATA[frozenset([${1:iterable}])$<
-val = "Returns a new hashable object that is a set of elements"
-try: val = frozenset([$1])
-except Exception: frozenset($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[frozenset(${1:iterable})
+$0]]></text>
     <description>Frozen Set</description>
   </snippet>
   <snippet>
-    <tag>funcdef</tag>
-    <text><![CDATA[${1:decorators}def ${2:funcname}(${3:parameter_list})${4: -> }${5:expression}:
-	${6:suite}
-$0
-	]]></text>
+    <tag>def</tag>
+    <text><![CDATA[def ${1:identifier}(${2:parameters})$3:
+    ${4:suite}
+$0]]></text>
     <description>Function Definition</description>
   </snippet>
   <snippet>
-    <tag>funcname</tag>
-    <text><![CDATA[${1:identifier}$0]]></text>
-    <description>Function Name</description>
-  </snippet>
-  <snippet>
-    <tag>future</tag>
-    <text><![CDATA[${1:from }${2:__future__ }${3:import }${4:feature }${5:as }${6:identifier }${7:, }${8:feature }${8:as }${9:identifier}]]></text>
-    <description>Future Statement</description>
-  </snippet>
-  <snippet>
     <tag>getattr</tag>
-    <text><![CDATA[getattr(${1:object}, ${2:named_attribute}${3:, default})$<
-val = "Get $2 from $1 if $2 is not present then $3"
-if $3.startswith(','):
-	default = ($3.lstrip(',')).lstrip()
-	try:
-		val = getattr(
-			$1, "$2", f"{default}"
-		)
-	except Exception:
-		val = getattr(
-			$1, $2, f"{default}"
-		)
-	except Exception:
-		pass
-		
-elif not $3:
-	try: val = getattr($1, "$2")
-	except Exception: val = getattr($1, $2)
-	except Exception: val = "$1.$2"
-	except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[getattr(${1:object}, ${2:name}${3:, default})
+$0]]></text>
     <description>Get Attribute</description>
   </snippet>
   <snippet>
     <tag>globals</tag>
-    <text><![CDATA[globals()${1: # Returns a dictionary represeting the current global symbol table}$0]]></text>
+    <text><![CDATA[globals()
+$0]]></text>
     <description>Globals</description>
   </snippet>
   <snippet>
     <tag>global</tag>
     <text><![CDATA[global ${1:identifier}
-${1} = 
 $0]]></text>
     <description>Global Statement</description>
   </snippet>
   <snippet>
     <tag>hasattr</tag>
-    <text><![CDATA[hasattr(${1:object}, ${2:named_attribute})$<
-val = "If getting $2 from $1 throws AttributeError returns False else True"
-try: val = hasattr($1, "$2")
-except Exception: val = hasattr($1, $2)
-except Exception: val = "$1.$2"
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[hasattr(${1:obj}, ${2:name})
+$0]]></text>
     <description>Has Attribute</description>
   </snippet>
   <snippet>
     <tag>hash</tag>
-    <text><![CDATA[hash(${1:object}})$<
-val = "Returns unique integer representing the $1 for comparision"
-try: val = hash($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[hash(${1:obj}})
+$0]]></text>
     <description>Hash</description>
   </snippet>
   <snippet>
     <tag>help</tag>
-    <text><![CDATA[help([${1:object}])${2:#THIS FUNCTION IS INTENDED FOR INTERACTIVE USE!}$0]]></text>
+    <text><![CDATA[help(${1:thing})
+$0]]></text>
     <description>Help</description>
   </snippet>
   <snippet>
     <tag>hex</tag>
-    <text><![CDATA[hex(${1:x})$<
-val = "Convert integer $1 to hex-string"
-try: val = hex($1)
-except Exception: val = hex(int($1))
-except Exception: val = hex(ord($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[hex(${1:number})
+$0]]></text>
     <description>Hexidecimal</description>
   </snippet>
   <snippet>
     <tag>id</tag>
-    <text><![CDATA[id(${1:object})${2:# Returns the Identity of an $1 as an integer that is unique through out of program lifetime}$0]]></text>
+    <text><![CDATA[id(${1:obj})
+$0]]></text>
     <description>Identity</description>
   </snippet>
   <snippet>
+    <tag>ifelse</tag>
+    <text><![CDATA[if ${1:assignment_expression}:
+    ${2:suite}
+${3:elif}
+else:
+    ${1:suite}
+$0]]></text>
+    <description>If Else Statement</description>
+  </snippet>
+  <snippet>
     <tag>if</tag>
-    <text><![CDATA[if ${1:identifier}:${2:=expression:}
-	${3:suite}
-${4:elif }${5:identifier}:${6:=expression:}
-	${7:suite}
-${4:else:}
-	${7:suite}]]></text>
+    <text><![CDATA[if ${1:assignment_expression}:
+    ${2:suite}
+${3:elif}$0]]></text>
     <description>If Statement</description>
   </snippet>
   <snippet>
+    <tag>importas</tag>
+    <text><![CDATA[import ${1:module} as ${2:identifier}
+$0]]></text>
+    <description>Import As Statement</description>
+  </snippet>
+  <snippet>
     <tag>import</tag>
-    <text><![CDATA[${1:import}${2:from}${3:module_or_relative_module}${4:import}${5:as}${6:identifier}${7:as}${8:identifier}
+    <text><![CDATA[import ${1:module}
 $0]]></text>
     <description>Import Statement</description>
   </snippet>
   <snippet>
-    <tag>inheritance</tag>
-    <text><![CDATA[(${1:argument_list})$0]]></text>
-    <description>Inheritance</description>
+    <text><![CDATA[if __name__ == "__main__":
+    ${1:suite}
+$0]]></text>
+    <description>In Main</description>
+    <tag>inmain</tag>
   </snippet>
   <snippet>
     <tag>input</tag>
-    <text><![CDATA[input(${1:[prompt]})${2: # If the $1 is present it is written to stdout before reading line}$0]]></text>
+    <text><![CDATA[input(${1:prompt=None})
+$0]]></text>
     <description>Input</description>
   </snippet>
   <snippet>
@@ -535,537 +382,317 @@ $0]]></text>
   </snippet>
   <snippet>
     <tag>int</tag>
-    <text><![CDATA[int(${1:[x]}${2:, base = 10})$<
-val = "Returns integer object constructed from $1 if string or number with $2 as a base identifier"
-base = $2.lstrip(", base = ")
-if not base:
-	try: val = int([$1])
-	except Exception: val = int($1)
-	except Exception: pass
-elif base:
-	try: val = int([$1], base)
-	except Exception: val = int($1, base)
-	except Exception: val = int(str($1), base)
-	except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[int(${1:x}${2:, base=10})
+$0]]></text>
     <description>Integer</description>
   </snippet>
   <snippet>
     <tag>isinstance</tag>
-    <text><![CDATA[isinstance(${1:object}, ${2:classinfo})$<
-val = "Returns True if $1 is instance of $2 or if $1 is a subclass of $2"
-try: val = isinstance($1, $2)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[isinstance(${1:obj}, ${2:class_or_tuple})
+$0]]></text>
     <description>Is Instance</description>
   </snippet>
   <snippet>
     <tag>issubclass</tag>
-    <text><![CDATA[issubclass(${1:class}, ${2:classinfo})$<
-val = "Returns True if $1 is a subclass of $2"
-try: val = issubclass($1, $2)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[issubclass(${1:cls}, ${2:class_or_tuple})
+$0]]></text>
     <description>Is Sub Class</description>
   </snippet>
   <snippet>
     <tag>iter</tag>
-    <text><![CDATA[iter(${1:object}${2:, sentinel})$<
-sentinel = $2.lstrip(", ")
-val = "Returns an iterator $1."
-if sentinel:
-	val += f"  With {sentinel} the $1 must be a callable $1"
-	try: val = iter($1, sentinel)
-	except Exception: pass
-try: val = iter($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[iter(${1:iterable})
+$0]]></text>
     <description>Iterator</description>
   </snippet>
   <snippet>
     <tag>(</tag>
-    <text><![CDATA[(${1:i} for ${2:i} in ${3:range}(${4:stop}))$0]]></text>
+    <text><![CDATA[(${1:i} for ${2:i} in ${3:iterator})
+$0]]></text>
     <description>Iterator Comprehension</description>
   </snippet>
   <snippet>
     <tag>lambda</tag>
-    <text><![CDATA[lambda ${1:x}: ${1}$0]]></text>
+    <text><![CDATA[lambda ${1:parameters}: ${1}
+$0]]></text>
     <description>Lambda</description>
   </snippet>
   <snippet>
     <tag>len</tag>
-    <text><![CDATA[len(${1:s})$<
-val = "Returns the number of items in $1"
-try: val = len($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[len(${1:obj})
+$0]]></text>
     <description>Length</description>
   </snippet>
   <snippet>
     <tag>list</tag>
-    <text><![CDATA[list(${1:[iterable]})$<
-val = "Returns a mutable sequence type or $1"
-try: val = list($1)
-except Exception: val = list([$1])
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[list(${1:iterable=(),})
+$0]]></text>
     <description>List</description>
   </snippet>
   <snippet>
     <tag>[</tag>
-    <text><![CDATA[[${1:i} for ${2:i} in ${3:range}(${4:val})]$0]]></text>
+    <text><![CDATA[[${1:i} for ${2:i} in ${3:iterator}]
+$0]]></text>
     <description>List Comprehension</description>
   </snippet>
   <snippet>
     <tag>locals</tag>
-    <text><![CDATA[locals()${1: # Updates and returns a dictionary represeting the current local symbol table}$0]]></text>
+    <text><![CDATA[locals()
+$0]]></text>
     <description>Locals</description>
   </snippet>
   <snippet>
-    <text><![CDATA[if ${1:__name__} == "${2:__main__}":
-	${3:exit}(${4:main()})
-$0]]></text>
-    <description>main</description>
-    <tag>main</tag>
-  </snippet>
-  <snippet>
     <tag>map</tag>
-    <text><![CDATA[map(${1:function}, ${2:iterable}${3:, ...})$<
-val = "Returns an iterator that applies $1 to every item of $2"
-third = $3.lstrip(", ")
-if third:
-	try: val = list(map($1, $2, third))
-	except Exception: pass
-else:
-	try: val = list(map($1, $2))
-	except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[map(${1:func}, ${2:*iterables})
+$0]]></text>
     <description>Map</description>
   </snippet>
   <snippet>
     <tag>max</tag>
-    <text><![CDATA[max(${1:iterable}${2:, default = kwargs}${3:, key = func}])$<
-val = "Return the largest item from $1"
-default = $2.lstrip(', default = ')
-key = $3.lstrip(', key = ')
-if key and default:
-	try: val = max($1, default, key)
-	except Exception: pass
-try: val = max($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[max(${1:iterable}${2:, default=obj}${3:, key=func}])
+$0]]></text>
     <description>Max</description>
   </snippet>
   <snippet>
     <tag>memoryview</tag>
-    <text><![CDATA[memoryview(${1:obj})$<
-val = "Returns a `memory view` object created from  $1"
-try: val = memoryview($1)
-except Exception: pass
-return val" # " + str(val)]]></text>
+    <text><![CDATA[memoryview(${1:object})
+$0]]></text>
     <description>Memory View</description>
   </snippet>
   <snippet>
     <tag>min</tag>
-    <text><![CDATA[min(${1:iterable}${2:, default = kwargs}${3:, key = func}])$<
-val = "Return the smallest item from $1"
-default = $2.lstrip(', default = ')
-key = $3.lstrip(', key = ')
-if key and default:
-	try: val = min($1, default, key)
-	except Exception: pass
-try: val = min($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[min(${1:iterable}${2:, default=obj}${3:, key=func}])
+$0]]></text>
     <description>Min</description>
   </snippet>
   <snippet>
-    <text><![CDATA[def get${1:_func}(self${2:, key}): return self._$1
-$0]]></text>
-    <description>New Get Method</description>
-    <tag>get</tag>
-  </snippet>
-  <snippet>
-    <text><![CDATA[def set${1:_func}(self, ${2:new_value}): self._$1 = $2
-$0]]></text>
-    <description>New Set Method</description>
-    <tag>set</tag>
-  </snippet>
-  <snippet>
     <tag>next</tag>
-    <text><![CDATA[next(${1:iterator}${2:, default}])$<
-val = "Retrieve the next item from $1 "
-default = $2.lstrip(', ')
-if default:
-	val += f" with {default} returned when $1 is exausted"
-try: val = next($1, default)
-except Exception: val = next($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[next(${1:iterator}${2:, default}])
+$0]]></text>
     <description>Next</description>
   </snippet>
   <snippet>
     <tag>nonlocal</tag>
     <text><![CDATA[nonlocal ${1:identifier}
-${1} = 
 $0]]></text>
     <description>Nonlocal Statement</description>
   </snippet>
   <snippet>
-    <tag>object</tag>
-    <text><![CDATA[object${1: # featureless object is a base of all classes}$0]]></text>
-    <description>Object</description>
-  </snippet>
-  <snippet>
     <tag>oct</tag>
-    <text><![CDATA[oct(${1:x})$<
-val = "Convert an integer $1 to an octal string prefix '0o'"
-try: val = oct($1)
-except Exception: val = oct(int($1))
-except Exception: val = oct(ord($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[oct(${1:number})
+$0]]></text>
     <description>Octal</description>
   </snippet>
   <snippet>
     <tag>open</tag>
-    <text><![CDATA[open(${1:"file"}, ${2:'r'}${3:, buffering}, ${4:, encoding}${5:, errors}${6:, newline}${7:, closefd}${8:, opener})$<
-val = " # open $1 and return the "
-if $3: buffering = $3.lstrip(", ")
-else: buffering = -1
-if $4: encoding = $4.lstrip(", ")
-else: encoding = None
-if $5: errors = $5.lstrip(", ")
-else: errors = None
-if $6: newline = $6.lstrip(", ")
-else: newline = None
-if $7: closefd = $7.lstrip(", ")
-else: closefd = True
-if $8: opener = $8.lstrip(", ")
-else: opener = None
-try: mode = $2
-except Exception: mode = '$2'
-try: 
-	file_object = open(
-		$1, mode, buffering, encoding, 			errors, newline, closefd,
-		opener
-	)
-	val += f"{str(file_object)}"
-	file_object.close()
-except OSError:	val += "$1 cannot be opened"
-except Exception: val += "file object"
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[open(${1:file}${2:, mode='r'}${3:, buffering=-1}${4:, encoding=None}${5:, errors=None}${6:, newline=None}${7:, closefd=True}${8:, opener=None})
+$0]]></text>
     <description>Open</description>
   </snippet>
   <snippet>
     <tag>ord</tag>
-    <text><![CDATA[ord(${1:'c'})$<
-val = "Given a unicode charcter $1 returns an integer representing that unicode point"
-try: val = ord($1)
-except Exception: val = ord('$1')
-except Exception: val = ord(str($1))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[ord(${1:ord})
+$0]]></text>
     <description>Ordinal</description>
   </snippet>
   <snippet>
-    <tag>parameter</tag>
-    <text><![CDATA[${1:identifier}${2:: }${3:expression}$0]]></text>
-    <description>Parameter</description>
-  </snippet>
-  <snippet>
-    <tag>parameter_list</tag>
-    <text><![CDATA[${1:defparameter}${2:, }${3: defparameter}${4:, }${5: parameter_list_no_posonly}$0]]></text>
-    <description>Parameter List</description>
-  </snippet>
-  <snippet>
-    <tag>parameter_list_no_posonly</tag>
-    <text><![CDATA[${1:defparameter}${2:, }${3: defparameter}${4:, }${5: parameter_list_starargs}$0]]></text>
-    <description>Parameter List No Position Only</description>
-  </snippet>
-  <snippet>
-    <tag>parameter_list_starargs</tag>
-    <text><![CDATA[*${1:parameter}${2:, }${3:defparameter}$0]]></text>
-    <description>Parameter List Starred Arguments</description>
-  </snippet>
-  <snippet>
     <tag>pass</tag>
-    <text><![CDATA[pass$0]]></text>
+    <text><![CDATA[pass
+$0]]></text>
     <description>Pass Statement</description>
   </snippet>
   <snippet>
     <tag>pow</tag>
-    <text><![CDATA[pow(${1:base}, ${2:exponenet}${3:, modulo})$<
-val = "Return $1 to the power $2, modulo $3"
-mod = $3.lstrip(', ')
-if mod:
-	try: val = int($1)**int($2)%int(mod)
-	except Exception: val = f"{int($1)} ** {int($2)} % {int(mod)}"
-	except Exception: val = "$1 ** $2 % mod"
-	except Exception: pass
-else:
-	try: val = int($1)**int($2)
-	except Exception: val = f"{int($1)} ** {int($2)}"
-	except Exception: val = "$1 ** $2"
-	except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[pow(${1:x}, ${2:y}${3:, z=one})
+$0]]></text>
     <description>Power</description>
   </snippet>
   <snippet>
     <tag>print</tag>
-    <text><![CDATA[print(${1:*objects}${2:, sep = ' '}${3:, end = '\n'}${4:, file = sys.stdout}${5:, flush = False})$<
-if $2: sep = $2.lstrip(", sep = ")
-else: sep = ' '
-if $3: end = $3.lstrip(", end = ")
-else: end = '\n'
-if $4: file = $4.lstrip(", file = ")
-else: file = sys.stdout
-val = f"Print $1 to the text stream {file=} seperated by {sep=} and followed by {end=}"
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[print(${1:value}${2:, sep=' '}${3:, end='\n'}${4:, file=sys.stdout}${5:, flush=False})
+$0]]></text>
     <description>Print</description>
   </snippet>
   <snippet>
     <tag>property</tag>
-    <text><![CDATA[property(${1:fget},${2:fset},${3:fdel},${4:doc})$<
-val = "Returns property attribute "
-try: val = property($1, $2, $3, $4)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[property(${1:object})
+$0]]></text>
     <description>Property</description>
   </snippet>
   <snippet>
+    <tag>raisefrom</tag>
+    <text><![CDATA[raraise ${1:expression} from ${2:expression}
+$0]]></text>
+    <description>Raise From Statement</description>
+  </snippet>
+  <snippet>
     <tag>raise</tag>
-    <text><![CDATA[raise ${1:expression}${1: from expression}]]></text>
+    <text><![CDATA[raise ${1:expression}
+$0]]></text>
     <description>Raise Statement</description>
   </snippet>
   <snippet>
     <tag>range</tag>
-    <text><![CDATA[range(${1:start_or_stop}, ${2:stop}${3:, step})$<
-val = "Returns immutable sequence"
-try: val = list(range($1, $2, $3.lstrip(', ')))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[range(${1:start}, ${2:stop}${3:, step})
+$0]]></text>
     <description>Range</description>
   </snippet>
   <snippet>
     <tag>repr</tag>
-    <text><![CDATA[repr(${1:object})$<
-val = "Return a tring containg a  printable representation of $1"
-try: val = repr($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[repr(${1:obj})
+$0]]></text>
     <description>Representation</description>
   </snippet>
   <snippet>
     <tag>return</tag>
-    <text><![CDATA[return ${1:[expression_list]}$0]]></text>
+    <text><![CDATA[return ${1:expression_list}
+$0]]></text>
     <description>Return Statement</description>
   </snippet>
   <snippet>
     <tag>reversed</tag>
-    <text><![CDATA[reversed(${1:sequence})$<
-val = "Return a reversed iterator.  $1 must have __reversed__() or, __len__() and __getitem__()"
-try: val = reversed($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[reversed(${1:sequence})
+$0]]></text>
     <description>Reversed</description>
   </snippet>
   <snippet>
     <tag>round</tag>
-    <text><![CDATA[round(${1:number}${2:, ndigits})$<
-val = "Return $1 rounded to $1 precision after the decimal point"
-try: round($1, $2)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[round(${1:number}${2:, ndigits=None})
+$0]]></text>
     <description>Round</description>
   </snippet>
   <snippet>
-    <text><![CDATA[self.]]></text>
-    <description>self</description>
-    <tag>.</tag>
-  </snippet>
-  <snippet>
     <tag>setattr</tag>
-    <text><![CDATA[setattr(${1:object}, ${2:named_attribute}, ${3:value})$<
-val = "Set $1 string $2 to an arbitary $3"
-try: val = setattr($1, "$2", $3)
-except Exception: val = setattr($1, $2, $3)
-except Exception: val = "$1.$2 = $3"
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[setattr(${1:obj}, ${2:name}, ${3:value})
+$0]]></text>
     <description>Set Attribute</description>
   </snippet>
   <snippet>
     <tag>set</tag>
-    <text><![CDATA[set(${1:[iterable]})$<
-val = "Return a new set object, optionally with elements taken from iterable"
-try: val = set($1)
-except Exception: val = set([$1])
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[set(${1:iterable})
+$0]]></text>
     <description>Set</description>
   </snippet>
   <snippet>
-    <text><![CDATA[#!${1:/usr/bin/}${2:python}
-#-*- coding:${3:utf-8} -*-
-$0]]></text>
-    <description>shebang</description>
-    <tag>py</tag>
-  </snippet>
-  <snippet>
     <tag>slice</tag>
-    <text><![CDATA[slice(${1:start}, ${2:stop}${3:, step})$<
-val = f"Return a slice object represeting the set of indices specified by range($1, $2, {$3.lstrip(', ')})"
-try: val = f"[{$1}:{$2}:{$3}]"
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[slice(${1:start}, ${2:stop}${3:, step})
+$0]]></text>
     <description>Slice</description>
   </snippet>
   <snippet>
     <tag>sorted</tag>
-    <text><![CDATA[sorted(${1:iterable}${2:, key = None}${3:, reverse = False})$<
-val = "Return a new sorted list from the items in $1"
-try: val = sorted($1, $2.lstrip(', '), $3.lstrip(', '))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[sorted(${1:iterable}${2:, key=None}${3:, reverse=False})
+$0]]></text>
     <description>Sorted</description>
   </snippet>
   <snippet>
     <tag>str</tag>
-    <text><![CDATA[str(${1:object}${2:, encoding}${3:, errors})$<
-val = "Return a string version of $1"
-encoding = $2.lstrip(', ')
-errors = $3.lstrip(', ')
-try: val = str($1, encoding, errors)
-except Exception: val = '"' + $1 + '"'
-except Exception: pass
-return " # " + val
->$0]]></text>
+    <text><![CDATA[str(${1:bytes_or_buffer}${2:, encoding}${3:, errors})
+$0]]></text>
     <description>String</description>
   </snippet>
   <snippet>
     <tag>sum</tag>
-    <text><![CDATA[sum(${1:iterable},${2:, 0})$<
-val = "Sums $2.lstrip(', ') and the items of the $1 from the left to right and returns the total"
-try: val = sum($1, int($2.lstrip(', ')))
-except Exception: val = sum([$1], int($2.lstrip(', ')))
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[sum(${1:iterable},${2:, start=0})
+$0]]></text>
     <description>Sumation</description>
   </snippet>
   <snippet>
     <tag>super</tag>
-    <text><![CDATA[super(${1:type}${2:, object-or-type})$<
-val = "Returns a proxy object that delegates method calls to a parent class or $1"
-try: val = super($1, $2.lstrip(', '))
-except Exception: val = super($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[super(${1:type})
+$0]]></text>
     <description>Super</description>
+  </snippet>
+  <snippet>
+    <tag>tryelse</tag>
+    <text><![CDATA[try:
+    ${1:suite}
+$2else:
+    ${3:suite}
+$0]]></text>
+    <description>Try Else Statement</description>
+  </snippet>
+  <snippet>
+    <tag>tryfinally</tag>
+    <text><![CDATA[try:
+    ${1:suite}
+$2finally:
+    ${3:suite}
+$0]]></text>
+    <description>Try Finally Statement</description>
   </snippet>
   <snippet>
     <tag>try</tag>
     <text><![CDATA[try:
-	${1:suite}
-except ${2:expression}${3: as }${4:identifier}:
-	${5:suite}
-${6:else:}
-	${7:suite}
-${8:finally:}
-	${9:suite}
+    ${1:suite}
 $0]]></text>
     <description>Try Statement</description>
   </snippet>
   <snippet>
     <tag>tuple</tag>
-    <text><![CDATA[tuple(${1:[iterable]})$<
-val = "Returns immutable sequence"
-try: val = tuple($1)
-except Exception: val = tuple([$1])
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[tuple(${1:iterable=()})
+$0]]></text>
     <description>Tuple</description>
   </snippet>
   <snippet>
     <tag>type</tag>
-    <text><![CDATA[type(${1:object_or_name}${2:, bases}${3:, dict})$<
-val = "Return the type of $1"
-try: val = type($1, $2.lstrip(", dict"), $3.lstrip(", dict"))
-except Exception: val = type($1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[type(${1:object_or_name}, ${2:bases}, ${3:dict})
+$0]]></text>
     <description>Type</description>
   </snippet>
   <snippet>
     <tag>vars</tag>
-    <text><![CDATA[vars(${1:[object]})$<
-val = "Return the __dict__ attribute for $1"
-try: val = vars($1)
-except Exception: val = vars([$1])
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[vars(${1:object})
+$0]]></text>
     <description>Variables</description>
   </snippet>
   <snippet>
+    <tag>whileelse</tag>
+    <text><![CDATA[while ${1:assinment_expression}:
+    ${2:suite}
+else:
+    ${3:suite}
+$0
+]]></text>
+    <description>While Else Statement</description>
+  </snippet>
+  <snippet>
     <tag>while</tag>
-    <text><![CDATA[while ${1:identifier}:${2:=expression:}
-	${3:suite}
-${4:else:}
-	${5:suite}
+    <text><![CDATA[while ${1:assinment_expression}:
+    ${2:suite}
 $0
 ]]></text>
     <description>While Statement</description>
   </snippet>
   <snippet>
+    <tag>withas</tag>
+    <text><![CDATA[with ${1:expression} as ${2:identfier}:
+    ${3:suite}
+$0]]></text>
+    <description>With As Statement</description>
+  </snippet>
+  <snippet>
     <tag>with</tag>
-    <text><![CDATA[with ${1:expression}${2: as }${3:target}:
-	${4:target}
+    <text><![CDATA[with ${1:expression}:
+    ${2:suite}
 $0]]></text>
     <description>With Statement</description>
   </snippet>
   <snippet>
+    <tag>yieldfrom</tag>
+    <text><![CDATA[yield from ${1:expression}
+$0]]></text>
+    <description>Yield From Expression</description>
+  </snippet>
+  <snippet>
     <tag>yield</tag>
-    <text><![CDATA[yield ${1:expression_list}${2: from expression}$0]]></text>
+    <text><![CDATA[yield ${1:expression_list}
+$0]]></text>
     <description>Yield Statement</description>
   </snippet>
   <snippet>
     <tag>zip</tag>
-    <text><![CDATA[zip(${1:*iterables})$<
-val = "Returns an iterator of tuples, where the i-th tuple contatins the i-th element from *each $1"
-try: val = zip($1)
-except Exception: val = zip(*$1)
-except Exception: pass
-return " # " + str(val)
->$0]]></text>
+    <text><![CDATA[zip(${1:iter}${2:, iter})
+$0]]></text>
     <description>Zip</description>
   </snippet>
 </snippets>
